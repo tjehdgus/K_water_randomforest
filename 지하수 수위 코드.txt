@@ -1,0 +1,92 @@
+--2022 수위 테이블
+create table hight_2022_1
+as
+SELECT 
+     조사년도,
+    SUBSTR(관측소명, 1, 2) AS 관측소명,
+     평균수위 
+FROM 
+    hight_2022;
+
+drop table hight_2022;
+   
+    create table hight_2022
+    as
+    select 조사년도, 관측소명, round(avg(평균수위),1) "평균 수위"
+    from hight_2022_1
+    group by 조사년도, 관측소명;
+    
+    select * from hight_2022
+    
+--2018 수위 테이블
+create table hight_2018_1
+as
+SELECT 
+     조사년도,
+    SUBSTR(관측소명, 1, 2) AS 관측소명,
+     평균수위 
+FROM 
+    hight_2018;
+
+drop table hight_2018;
+   
+    create table hight_2018
+    as
+    select 조사년도, 관측소명, round(avg(평균수위),1) "평균 수위"
+    from hight_2018_1
+    group by 조사년도, 관측소명;
+    
+    select * from hight_2018
+    
+--2022년 수위 테이블
+create table hight_2020_1
+as
+SELECT 
+     조사년도,
+    SUBSTR(관측소명, 1, 2) AS 관측소명,
+     평균수위 
+FROM 
+    hight_2020;
+
+drop table hight_2020;
+   
+    create table hight_2020
+    as
+    select 조사년도, 관측소명, round(avg(평균수위),1) "평균 수위"
+    from hight_2020_1
+    group by 조사년도, 관측소명;
+    
+    select * from hight_2020;
+    
+--2021년 수위테이블
+create table hight_2021_1
+as
+SELECT 
+     조사년도,
+    SUBSTR(관측소명, 1, 2) AS 관측소명,
+     평균수위 
+FROM 
+    hight_2021;
+
+drop table hight_2021;
+   
+    create table hight_2021
+    as
+    select 조사년도, 관측소명, round(avg(평균수위),1) "평균 수위"
+    from hight_2021_1
+    group by 조사년도, 관측소명;
+    
+    select * from hight_2021;    
+    --2022,2021,2020, 2018년도 수위 합치기
+    create table hight
+    as
+    select * from hight_2020
+    union all
+    select * from hight_2021
+    union all
+    select * from hight_2022
+    union all
+    select * from hight_2018;
+    
+    select * from hight
+    

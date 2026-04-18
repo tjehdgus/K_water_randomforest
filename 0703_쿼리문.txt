@@ -1,0 +1,61 @@
+select 지점명,count(*)
+    from drought_2024
+    where to_char(일시,'RRRR') != 2018
+    group by 지점명
+    having count(*) != 1461;
+
+select 일시 from drought_2024 where 지점명 = '세종' order by 일시;
+
+select * from dam;
+
+select count(지점명) from drought_2024
+where to_char(일시,'rrrr') not like '%2018%';
+
+delete from drought_2024
+where 지점명 ='진도(첨찰산)';
+
+select * from drought_2024;
+
+
+select * from drought_2024;
+select corr(spi6,최고기온),corr(spi6,평균기온),corr(spi6,평균상대습도),corr(spi6,평균지면온도),corr(spi6,합계소형증발량),corr(spi6,강수9_9)
+    from drought d,drought_2024 d2
+    where d.일시 = d2.일시 and d.지점명 = d2.지점명; 
+
+
+drop table dw;
+
+create table dw
+as
+select d.지점명,d.일시,w.일강수량,d.spi6
+    from drought d,water w
+    where d.일시 = w.일시 and d.지점명 = w.지점명;
+drop table a;
+
+create table a
+as
+select rownum as id,일강수량,최고기온,평균상대습도,평균지면온도,d.spi6,to_number(합계소형증발량) as 합계소형증발량,방류량,사용가능량
+    from dw d,drought_2024 d2 ,dam d3
+    where d.일시 = d2.일시 and d.지점명 = d2.지점명
+    and d3.날짜 = d2.일시 and d3.지점 = d2.지점명;
+
+select corr(합계소형증발량,spi6)
+    from a;
+    
+delete from a where 합계소형증발량 is null;
+
+commit;
+
+select count(*) from a;
+
+create table b
+as
+select rownum as id,일강수량,to_number(합계소형증발량) as 합계소형증발량
+from a;
+
+select * from b;
+select count(합계소형증발량)
+    from drought_2024;
+select * from drought_2024;
+
+
