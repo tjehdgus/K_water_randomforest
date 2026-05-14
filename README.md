@@ -1,15 +1,15 @@
 # 💧 수자원공사 공모전 프로젝트
-<img src="https://github.com/user-attachments/assets/a9469605-548a-4169-a520-58b19e724e48" alt="수자원공사 공모전 프로젝트" width="500">
+<img src="https://raw.githubusercontent.com/tjehdgus/K_water_randomforest/main/images/cover.png" alt="수자원공사 공모전 프로젝트" width="500">
 ---
 
 ### 📷 프로젝트 표지
-<img src="https://github.com/user-attachments/assets/ad1645e3-20ff-4b8f-b5de-99a08cb9e356" alt="수자원공사 공모전 프로젝트" width="500">
+<img src="https://raw.githubusercontent.com/tjehdgus/K_water_randomforest/main/images/cover.png" alt="수자원공사 공모전 프로젝트" width="500">
 # -
 
 
 ### 📄 발표자료
 프로젝트의 자세한 내용은 발표자료에서 확인할 수 있습니다:  
-[📂 발표자료 PDF](https://github.com/tjehdgus/-/blob/main/%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C.pdf)
+[📂 발표자료 PDF](./docs/SPI6_가뭄예측_발표자료.pdf)
 
 
 ---
