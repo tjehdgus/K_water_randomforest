@@ -1,10 +1,5 @@
 # 💧 수자원공사 공모전 프로젝트
 <img src="https://raw.githubusercontent.com/tjehdgus/K_water_randomforest/main/images/cover.png" alt="수자원공사 공모전 프로젝트" width="500">
----
-
-### 📷 프로젝트 표지
-<img src="https://raw.githubusercontent.com/tjehdgus/K_water_randomforest/main/images/cover.png" alt="수자원공사 공모전 프로젝트" width="500">
-# -
 
 
 ### 📄 발표자료
